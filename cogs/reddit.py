@@ -21,7 +21,7 @@ class Reddit(commands.Cog):
     reddit = praw.Reddit(
         client_id=redid, client_secret=redsecret, user_agent=redagent)
 
-    @bot.group()
+    @commands.group()
     async def reddit(self, ctx):
         if ctx.invoked_subcommand is None:
             await ctx.send("Unknown Reddit command passed.")
