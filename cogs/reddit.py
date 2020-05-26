@@ -21,12 +21,7 @@ class Reddit(commands.Cog):
     reddit = praw.Reddit(
         client_id=redid, client_secret=redsecret, user_agent=redagent)
 
-    @commands.group()
-    async def reddit(self, ctx):
-        if ctx.invoked_subcommand is None:
-            await ctx.send("Unknown Reddit command passed.")
-
-    @reddit.command()
+    @commands.command()
     async def meme(self, ctx):
 
         await ctx.trigger_typing()
@@ -51,7 +46,7 @@ class Reddit(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @reddit.command()
+    @commands.command()
     async def search(self, ctx, query: str, category='hot'):
 
         try:
