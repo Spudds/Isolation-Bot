@@ -78,7 +78,7 @@ class Reddit(commands.Cog):
                                 value=f'[{s.title}](https://www.reddit.com{s.permalink})', inline=False)
 
             except:
-                await ctx.send("Reddit gone oof")
+                await ctx.send("Looks Reddit is unresponsive. Please try again a little later.")
                 return
 
         await ctx.send(embed=embed)
@@ -86,7 +86,7 @@ class Reddit(commands.Cog):
     @search.error
     async def search_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
-            await ctx.send(f"Error {error}")
+            await ctx.send(f"Error: {error}")
         elif isinstance(error, commands.MissingRequiredArgument):
             await ctx.send(f"You need to enter a subreddit that you'd like me search!")
         elif isinstance(error, commands.CommandInvokeError):
