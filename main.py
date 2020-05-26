@@ -30,9 +30,4 @@ async def block_dms(ctx):
         return ctx.guild is not None
 
 
-@bot.command()
-async def test(ctx):
-    await ctx.send('It worked :clap:')
-
-
 bot.run(token)
