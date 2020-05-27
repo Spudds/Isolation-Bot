@@ -1,1 +1,1 @@
-A very epic bot used in the Isolation Bunker server.
+A very epic bot used in a server for my friends and I. 
