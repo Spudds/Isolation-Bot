@@ -92,6 +92,31 @@ class Reddit(commands.Cog):
         elif isinstance(error, commands.CommandInvokeError):
             await ctx.send("I was unable to find a subreddit with that name. Please try again.")
 
+    @commands.command()
+    async def dankmeme(self, ctx):
+
+        await ctx.trigger_typing()
+
+        submissions = self.reddit.subreddit('dankmemes').random_rising(limit=1)
+
+        embed = discord.Embed(colour=discord.Colour.red())
+
+        for s in submissions:
+            try:
+                embed.title = "Here's your meme!"
+                embed.set_image(url=s.url)
+                embed.add_field(
+                    name="**Title: **", value=f'**[{s.title}](https://www.reddit.com/{s.permalink})**')
+                embed.add_field(
+                    name="**Posted by: **", value=f'u/{s.author}')
+                embed.set_footer(
+                    text=f"Requested by {ctx.message.author}", icon_url=ctx.message.author.avatar_url)
+
+            except:
+                await ctx.send("Oof, looks like something went wrong. This is usually because of Reddit deciding to die, so try again in a few minutes.")
+
+        await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Reddit(bot))
