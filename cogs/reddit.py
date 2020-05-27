@@ -74,7 +74,7 @@ class Reddit(commands.Cog):
         for s in submissions:
             try:
                 embed.title = f"Displaying five {category} posts from r/{query}"
-                embed.add_field(name=f"This post has {s.score} upvotes | Posted by {s.author}",
+                embed.add_field(name=f"<:reddit_upvote:715162424386519081> **{s.score}** upvotes | Posted by {s.author}",
                                 value=f'[{s.title}](https://www.reddit.com{s.permalink})', inline=False)
 
             except:
