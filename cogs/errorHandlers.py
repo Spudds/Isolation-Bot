@@ -29,7 +29,7 @@ class CommandErrorHandler(commands.Cog):
             return await ctx.send(f"{ctx.command} has been disabled!")
 
         elif isinstance(error, commands.BadArgument):
-            await ctx.send(f"I could not find that member. Please try again.")
+            await ctx.send(f"Error: {error}")
 
         elif isinstance(error, commands.MissingRequiredArgument):
             await ctx.send(f"Error: {error}")
