@@ -1,9 +1,10 @@
+import discord
+from discord.ext import commands
+
 import praw
 import prawcore
 import json
 import asyncio
-import discord
-from discord.ext import commands
 from datetime import datetime
 
 with open("config.json") as config:

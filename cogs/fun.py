@@ -1,10 +1,10 @@
+import discord
+from discord.ext import commands
+
 import asyncio
 import time
 import aiohttp
 import random
-
-import discord
-from discord.ext import commands
 
 
 class Fun(commands.Cog):

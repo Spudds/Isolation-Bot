@@ -1,6 +1,7 @@
 import discord
-import asyncio
 from discord.ext import commands
+
+import asyncio
 
 
 class Moderation(commands.Cog):
